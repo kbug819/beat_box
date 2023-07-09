@@ -22,18 +22,18 @@ describe LinkedList do
 
   describe "#append" do
     it "add data to list" do
-    list = LinkedList.new
-    list.append("doop")
+      list = LinkedList.new
+      list.append("doop")
 
-    expect(list.head.data).to eq("doop")
-    expect(list.head).to be_an_instance_of(Node)
-    expect(list.head.next_node).to eq(nil)
-    list.append("deep")
-    expect(list.head).to be_an_instance_of(Node)
-    expect(list.head.next_node.data).to eq("deep")
-    #this portion was very difficult, but a huge step forward after figuring it out!# 
-    #Understanding the circular structure of going from head to next node, re-assigning value, next-node, etc. 
-  end
+      expect(list.head.data).to eq("doop")
+      expect(list.head).to be_an_instance_of(Node)
+      expect(list.head.next_node).to eq(nil)
+      list.append("deep")
+      expect(list.head).to be_an_instance_of(Node)
+      expect(list.head.next_node.data).to eq("deep")
+      #this portion was very difficult, but a huge step forward after figuring it out!# 
+      #Understanding the circular structure of going from head to next node, re-assigning value, next-node, etc. 
+    end
   end
   
 
@@ -76,27 +76,49 @@ describe LinkedList do
   end
 
   describe "#insert" do
-    xit "will submit an element to middle of list" do
+    it "will submit an element to middle of list" do
+      list = LinkedList.new
+      list.append("plop")
+      list.append("suu")
+      list.prepend("dop")
+
       expect(list.to_string).to eq("dop plop suu")
       list.insert(1, "woo")
-      expect(list.to_string).to eq("dop woo plop woo suu")
+      expect(list.to_string).to eq("dop woo plop suu")
     end
   end
 
-    describe "#find" do
-      xit "will find the parameters in the list" do
-        list.append("deep")
-        list.append("woo")
-        list.append("shi")
-        list.append("shu")
-        list.append("blop")
-        expect(list.to_string).to eq("deep woo shi shu blop")
-      end
+  describe "#find" do
+    xit "will find the parameters in the list" do
+      list = LinkedList.new
+
+      list.append("deep")
+      list.append("woo")
+      list.append("shi")
+      list.append("shu")
+      list.append("blop")
+      expect(list.to_string).to eq("deep woo shi shu blop")
+      # expect(list.find(2)).to eq("shi") #(used test to find the first parameter, will now tackle finding the second parameter for the method)
+      expect(list.find(2, 1)).to eq("shi")
+      expect(list.find(1, 3)).to eq("woo shi shu")
     end
+  end
 
+  describe "#includes?" do
+    describe "will give back true or false if element is in the list" do
+      list = LinkedList.new
 
-
+      list.append("deep")
+      list.append("woo")
+      list.append("shi")
+      list.append("shu")
+      list.append("blop")
+      expect(list.includes?("deep")).to eq(true)
+    end
+  end
 end
+
+
 
 
 

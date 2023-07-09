@@ -19,6 +19,7 @@ class LinkedList
       # will do this function until we are at the end of the list
       last_node.next_node = new_node
     end
+  end
     # current.next_node = new_node
 
       # current = @head 
@@ -30,17 +31,17 @@ class LinkedList
     # end
     
     # @count_node += 1
-  end 
+   
 
   def count 
     count = 0
-    current = @head
+    last_node = @head
 
-    while current
+    while last_node
       count += 1
-      current = current.next_node
+      last_node = last_node.next_node
     end
-    
+
     count
   end
     #  if head.data == nil
@@ -69,18 +70,18 @@ class LinkedList
     # end
   
 
-  def to_string
+  def to_string # Need to do further research on this method to better understand
    if @head == nil
     nil
    else
-    current = @head
-      until current.next_node == nil do
-        string = "#{string} #{current.data}"
-        current = current.next_node
+    last_node = @head
+      until last_node.next_node == nil do
+        string = "#{string} #{last_node.data}"
+        last_node = last_node.next_node
       end
     end
 
-    string = "#{string} #{current.data}"
+    string = "#{string} #{last_node.data}"
     string.strip
   end
 
@@ -96,6 +97,49 @@ class LinkedList
     end
   end 
 
+  def find(index, number) 
+      last_node = @head
+      counter = 0
+      string = ""
+
+      while counter < index
+        last_node = last_node.next_node
+        counter += 1
+      end
+
+      until counter == (number + index) 
+        string << last_node.data  #Cannot figure out how to add a space
+        last_node = last_node.next_node
+        counter += 1
+      end
+      string
+      # last_node.next_node.data 
+
+        # (number - 1).times do
+        # end
+        # (number - 1).times do
+        #   last_node.next_node.data
+        #   # (number - 1).times do
+        #   #   last_node = last_node.next_node
+        #   end
+
+      # (number - 1).times do
+      # last_node.next_node.data
+      # end
+
+    end  
+
+
+  # def find(index) # This method worked to find the element at the index number, will update to add second parameter
+  #   last_node = @head
+
+  #   (index - 1).times do
+  #     last_node = last_node.next_node
+  #   end
+  #   last_node.next_node.data 
+  # end  
+
+
   def insert(index, data_2)
     new_node = Node.new(data_2)
     current = @head
@@ -109,11 +153,20 @@ class LinkedList
       current.next_node = new_node
   end
 
+  def includes? 
+    next_
 
+  
 
 
 
 end
+
+
+
+
+
+
 
 
 end
