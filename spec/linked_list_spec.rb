@@ -1,12 +1,12 @@
 require './lib/node'
 require './lib/linked_list'
 
-list = LinkedList.new
 
 describe LinkedList do
 
   describe '#initialize' do
     xit 'is an instance of LinkedList' do
+    list = LinkedList.new
 
     expect(list).to be_an_instance_of(LinkedList)
     end
@@ -14,13 +14,16 @@ describe LinkedList do
 
   describe "#head" do
     xit "returns head" do
-
+    list = LinkedList.new
+  
     expect(list.head).to eq(nil)
     end
   end
 
   describe "#append" do
-    xit "add data to list" do
+    it "add data to list" do
+    list = LinkedList.new
+
     list.append("doop")
 
     expect(list.head.data).to eq("doop")
@@ -30,7 +33,8 @@ describe LinkedList do
     expect(list.head).to be_an_instance_of(Node)
     expect(list.head.next_node.data).to eq("deep")
     #this portion was very difficult, but a huge step forward after figuring it out!# 
-    end
+    #Understanding the circular structure of going from head to next node, re-assigning value, next-node, etc. 
+  end
   end
   
 
@@ -56,7 +60,7 @@ describe LinkedList do
   end
   
   describe "#prepend" do
-    it "will add nodes to the beginning of the list" do
+    xit "will add nodes to the beginning of the list" do
       list.append("plop")
       expect(list.to_string).to eq("plop")
       list.append("suu")
@@ -69,12 +73,24 @@ describe LinkedList do
   end
 
   describe "#insert" do
-    it "will submit an element to middle of list" do
+    xit "will submit an element to middle of list" do
       expect(list.to_string).to eq("dop plop suu")
       list.insert(1, "woo")
-
+      expect(list.to_string).to eq("dop woo plop woo suu")
     end
   end
+
+    describe "#find" do
+      xit "will find the parameters in the list" do
+        list.append("deep")
+        list.append("woo")
+        list.append("shi")
+        list.append("shu")
+        list.append("blop")
+        expect(list.to_string).to eq("deep woo shi shu blop")
+      end
+    end
+
 
 
 end

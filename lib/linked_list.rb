@@ -7,19 +7,28 @@ class LinkedList
 
   def append(data)
     new_node = Node.new(data)
-    current = @head
+    # current = @head
 
     if @head == nil
       @head = new_node
     else
-      # current = @head 
-      if current.next_node == nil
-        current.next_node = new_node 
+      last_node = @head
+      while last_node.next_node != nil
+        last_node = last_node.next_node
       end
+      # will do this function until we are at the end of the list
+      last_node.next_node = new_node
+    end
+    # current.next_node = new_node
+
+      # current = @head 
+      # if current.next_node == nil #line 16 - 18 working for two elements only
+      #   current.next_node = new_node 
+      # end
     # if @head = nil?
     #   @head = node_1
     # end
-    end
+    
     # @count_node += 1
   end 
 
@@ -87,7 +96,24 @@ class LinkedList
     end
   end 
 
+  def insert(index, data_2)
+    new_node = Node.new(data_2)
+    current = @head
+    if current == nil
+      new_node = @head
+    else
+      (index - 1).times do
+        current = current.next_node
+    end
+      new_node.next_node = current.next_node
+      current.next_node = new_node
+  end
+
+
+
+
+
 end
 
 
-
+end
