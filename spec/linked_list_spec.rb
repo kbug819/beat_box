@@ -5,7 +5,7 @@ require './lib/linked_list'
 describe LinkedList do
 
   describe '#initialize' do
-    xit 'is an instance of LinkedList' do
+    it 'is an instance of LinkedList' do
     list = LinkedList.new
 
     expect(list).to be_an_instance_of(LinkedList)
@@ -13,7 +13,7 @@ describe LinkedList do
   end
 
   describe "#head" do
-    xit "returns head" do
+    it "returns head" do
     list = LinkedList.new
   
     expect(list.head).to eq(nil)
@@ -23,7 +23,6 @@ describe LinkedList do
   describe "#append" do
     it "add data to list" do
     list = LinkedList.new
-
     list.append("doop")
 
     expect(list.head.data).to eq("doop")
@@ -39,28 +38,32 @@ describe LinkedList do
   
 
   describe "#count#" do
-    xit "counts the amount of data listed" do
-    # expect(list.count).to eq(0)  
-    
-    # list.append("doop")
-    # expect(list.count).to  eq(1)
-    # list.append("deep")
+    it "counts the amount of data listed" do
+    list = LinkedList.new
+
+    expect(list.count).to eq(0)  
+    list.append("doop")
+    expect(list.count).to  eq(1)
+    list.append("deep")
     expect(list.count).to eq(2)
     end
   end
 
   describe "#to_string" do
-    xit "returns all elements in the list" do
-      list.append("doop")
-      list.append("deep")
+    it "returns all elements in the list" do
+      list = LinkedList.new
 
+      list.append("doop")
       expect(list.head.data).to eq("doop")
+
+      list.append("deep")
       expect(list.to_string).to eq("doop deep")
     end
   end
   
   describe "#prepend" do
-    xit "will add nodes to the beginning of the list" do
+    it "will add nodes to the beginning of the list" do
+      list = LinkedList.new
       list.append("plop")
       expect(list.to_string).to eq("plop")
       list.append("suu")
