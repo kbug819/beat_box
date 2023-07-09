@@ -12,7 +12,7 @@ class LinkedList
     if @head == nil
       @head = new_node
     else
-      current = @head 
+      # current = @head 
       if current.next_node == nil
         current.next_node = new_node 
       end
@@ -64,34 +64,28 @@ class LinkedList
    if @head == nil
     nil
    else
-    current_node = @head
-      until current_node.next_node == nil do
-        string = "#{string} #{current_node.data}"
-        current_node = current_node.next_node
+    current = @head
+      until current.next_node == nil do
+        string = "#{string} #{current.data}"
+        current = current.next_node
       end
     end
 
-    string = "#{string} #{current_node.data}"
+    string = "#{string} #{current.data}"
     string.strip
   end
 
-  # def prepend(data)
-  #   new_node = Node.new(data)
-  #   current = @head
-
-  #   if @head == nil
-  #     @head = new_node
-  #   else
-  #     current = @head 
-  #     if current.next_node == nil
-  #       current.next_node = new_node
-  #     end
-    # if @head = nil?
-    #   @head = node_1
-    # end
-    # end
-    # @count_node += 1
-  # end 
+  def prepend(data_1)
+    new_node = Node.new(data_1)
+    new_node = @head
+    if @head == nil
+      @head = new_node
+    else
+      current = Node.new(data_1)
+      current.next_node = @head
+      @head = current
+    end
+  end 
 
 end
 
