@@ -14,9 +14,9 @@ describe LinkedList do
 
   describe "#head" do
     it "returns head" do
-    list = LinkedList.new
-  
-    expect(list.head).to eq(nil)
+      list = LinkedList.new
+    
+      expect(list.head).to eq(nil)
     end
   end
 
@@ -39,13 +39,13 @@ describe LinkedList do
 
   describe "#count#" do
     it "counts the amount of data listed" do
-    list = LinkedList.new
+      list = LinkedList.new
 
-    expect(list.count).to eq(0)  
-    list.append("doop")
-    expect(list.count).to  eq(1)
-    list.append("deep")
-    expect(list.count).to eq(2)
+      expect(list.count).to eq(0)  
+      list.append("doop")
+      expect(list.count).to  eq(1)
+      list.append("deep")
+      expect(list.count).to eq(2)
     end
   end
 
@@ -105,7 +105,7 @@ describe LinkedList do
   end
 
   describe "#includes?" do
-    describe "will give back true or false if element is in the list" do
+    it "will give boolean if element listed" do
       list = LinkedList.new
 
       list.append("deep")
@@ -114,8 +114,26 @@ describe LinkedList do
       list.append("shu")
       list.append("blop")
       expect(list.includes?("deep")).to eq(true)
+
+      expect(list.includes?("dep")).to eq(false)
     end
   end
+
+  describe "#pop" do
+    it "takes the last element from list" do
+      list = LinkedList.new
+
+      list.append("deep")
+      list.append("woo")
+      list.append("shi")
+      list.append("shu")
+      list.append("blop")
+      expect(list.pop).to eq("blop")
+      expect(list.pop).to eq("shu")
+    end
+  end
+
+
 end
 
 

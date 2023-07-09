@@ -139,6 +139,41 @@ class LinkedList
   #   last_node.next_node.data 
   # end  
 
+  def includes?(value)
+    last_node = @head
+    # current_data = last_node.data
+
+    # if current_data == value
+    #   true
+    # else
+    #   while current_data != value
+    #     last_node = last_node.next_node
+    #   end
+    #   true
+      until last_node.data == value
+        last_node = last_node.next_node
+        break if last_node.next_node == nil
+      end
+      if 
+        last_node.next_node == nil
+        false 
+      else
+        true
+      end
+  end
+
+  def pop
+    last_node = @head
+    previous_node = nil
+
+    until last_node.next_node == nil
+      previous_node = last_node
+      last_node = last_node.next_node
+    end
+    previous_node.next_node = nil
+    last_node.data
+
+  end
 
   def insert(index, data_2)
     new_node = Node.new(data_2)
@@ -153,8 +188,8 @@ class LinkedList
       current.next_node = new_node
   end
 
-  def includes? 
-    next_
+
+
 
   
 
