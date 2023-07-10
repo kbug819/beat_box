@@ -23,8 +23,8 @@ describe LinkedList do
   describe "#append" do
     it "add data to list" do
       list = LinkedList.new
-      list.append("doop")
 
+      list.append("doop")
       expect(list.head.data).to eq("doop")
       expect(list.head).to be_an_instance_of(Node)
       expect(list.head.next_node).to eq(nil)
@@ -55,7 +55,6 @@ describe LinkedList do
 
       list.append("doop")
       expect(list.head.data).to eq("doop")
-
       list.append("deep")
       expect(list.to_string).to eq("doop deep")
     end
@@ -64,6 +63,7 @@ describe LinkedList do
   describe "#prepend" do
     it "will add nodes to the beginning of the list" do
       list = LinkedList.new
+
       list.append("plop")
       expect(list.to_string).to eq("plop")
       list.append("suu")
@@ -72,6 +72,10 @@ describe LinkedList do
       expect(list.head.data).to eq("dop")
       expect(list.to_string).to eq("dop plop suu")
       expect(list.count).to eq(3)
+      # list.prepend("doowap") #Extra testing
+      # expect(list.to_string).to eq("doowap dop plop suu")
+      # list.append("hello")
+      # expect(list.to_string).to eq("doowap dop plop suu hello")
     end
   end
 
@@ -89,7 +93,7 @@ describe LinkedList do
   end
 
   describe "#find" do
-    xit "will find the parameters in the list" do
+    it "will find the parameters in the list" do
       list = LinkedList.new
 
       list.append("deep")
@@ -101,6 +105,7 @@ describe LinkedList do
       # expect(list.find(2)).to eq("shi") #(used test to find the first parameter, will now tackle finding the second parameter for the method)
       expect(list.find(2, 1)).to eq("shi")
       expect(list.find(1, 3)).to eq("woo shi shu")
+      # expect(list.find(3, 2)).to eq("shu blop") #test line
     end
   end
 
@@ -114,7 +119,6 @@ describe LinkedList do
       list.append("shu")
       list.append("blop")
       expect(list.includes?("deep")).to eq(true)
-
       expect(list.includes?("dep")).to eq(false)
     end
   end
@@ -131,6 +135,7 @@ describe LinkedList do
       # expect(list.pop).to eq("blop")
       # expect(list.pop).to eq("shu")
       list.pop
+      expect(list.to_string).to eq("deep woo shi shu")
       list.pop
       expect(list.to_string).to eq("deep woo shi")
     end
@@ -143,7 +148,3 @@ end
 
 
 
-#Created a variable regarding the current node that you are on.
-#count += 1
-#Current node = head
-#count until next_node is nil, if not, keep counting

@@ -30,6 +30,8 @@ describe BeatBox do
     it "plays the input from the terminal" do
       bb = BeatBox.new
       bb.append("deep doo ditt woo hoo shu")
+      expect(bb.count).to eq(6)
+      expect(bb.list.to_string).to eq("deep doo ditt woo hoo shu")
       bb.play
     end
   end
