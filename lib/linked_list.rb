@@ -7,7 +7,7 @@ class LinkedList
 
   def append(data)
     new_node = Node.new(data)
-    # current = @head
+    # current = @head - redifined below, better understanding of 'last_node'
 
     if @head == nil
       @head = new_node
@@ -16,12 +16,11 @@ class LinkedList
       while last_node.next_node != nil
         last_node = last_node.next_node
       end
-      # will do this function until we are at the end of the list
+      # will do the while function until we are at the end of the list
       last_node.next_node = new_node
     end
   end
     # current.next_node = new_node
-
       # current = @head 
       # if current.next_node == nil #line 16 - 18 working for two elements only
       #   current.next_node = new_node 
@@ -29,10 +28,8 @@ class LinkedList
     # if @head = nil?
     #   @head = node_1
     # end
-    
     # @count_node += 1
    
-
   def count 
     count = 0
     last_node = @head

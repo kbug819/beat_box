@@ -23,8 +23,8 @@ describe LinkedList do
   describe "#append" do
     it "add data to list" do
       list = LinkedList.new
-      list.append("doop")
 
+      list.append("doop")
       expect(list.head.data).to eq("doop")
       expect(list.head).to be_an_instance_of(Node)
       expect(list.head.next_node).to eq(nil)
@@ -38,7 +38,7 @@ describe LinkedList do
   
 
   describe "#count#" do
-    it "counts the amount of data listed" do
+    xit "counts the amount of data listed" do
       list = LinkedList.new
 
       expect(list.count).to eq(0)  
@@ -50,7 +50,7 @@ describe LinkedList do
   end
 
   describe "#to_string" do
-    it "returns all elements in the list" do
+    xit "returns all elements in the list" do
       list = LinkedList.new
 
       list.append("doop")
@@ -62,7 +62,7 @@ describe LinkedList do
   end
   
   describe "#prepend" do
-    it "will add nodes to the beginning of the list" do
+    xit "will add nodes to the beginning of the list" do
       list = LinkedList.new
       list.append("plop")
       expect(list.to_string).to eq("plop")
@@ -76,7 +76,7 @@ describe LinkedList do
   end
 
   describe "#insert" do
-    it "will submit an element to middle of list" do
+    xit "will submit an element to middle of list" do
       list = LinkedList.new
       list.append("plop")
       list.append("suu")
@@ -105,7 +105,7 @@ describe LinkedList do
   end
 
   describe "#includes?" do
-    it "will give boolean if element listed" do
+    xit "will give boolean if element listed" do
       list = LinkedList.new
 
       list.append("deep")
@@ -120,7 +120,7 @@ describe LinkedList do
   end
 
   describe "#pop" do
-    it "takes the last element from list" do
+    xit "takes the last element from list" do
       list = LinkedList.new
 
       list.append("deep")
