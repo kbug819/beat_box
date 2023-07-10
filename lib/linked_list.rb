@@ -4,7 +4,6 @@ class LinkedList
     @head = nil
  end
 
-
   def append(data)
     new_node = Node.new(data)
     # current = @head - redifined below, better understanding of 'last_node'
@@ -20,15 +19,6 @@ class LinkedList
       last_node.next_node = new_node
     end
   end
-    # current.next_node = new_node
-      # current = @head 
-      # if current.next_node == nil #line 16 - 18 working for two elements only
-      #   current.next_node = new_node 
-      # end
-    # if @head = nil?
-    #   @head = node_1
-    # end
-    # @count_node += 1
    
   def count 
     count = 0
@@ -40,48 +30,24 @@ class LinkedList
     end
     count #prints the count
   end
-    #  if head.data == nil
-    #   @count_node = 0
-    #  else
-    #     @count_node = 1
-    #     current_node = @head
-    #     while current_node.next_node != nil
-    #       current_node = current_node.next_node
-    #       @count_node += 1
-    #     end
-    #  end
-    # else
-    #   count += 1 while head.next_node == nil
-    # end
-    # count = 0
-    # while current.next_node.data == nil
-    #   count +=1
-    # end
-    # if @head.data == nil
-    #   0
-    # else
-    #   1
-    # end
   
-
-  def to_string # Need to do further research on this method to better understand
-   string = ""
-    if @head == nil
-    nil
-   else
-    last_node = @head
-      until last_node.next_node == nil do
-        string = "#{string} #{last_node.data}" #adds each data point to the empty string
-        last_node = last_node.next_node
-      end
-    end
-
-    string = "#{string} #{last_node.data}"
-    string.strip #takes away all whitespace
-  end
+    def to_string 
+      string = ""
+       if @head == nil
+       nil
+      else
+       last_node = @head
+         until last_node.next_node == nil do
+          string << last_node.data + " "
+           last_node = last_node.next_node
+         end
+       end
+       string << last_node.data + " "
+       string.chop 
+     end
   
   def prepend(data_1) #moving data to the head of the list
-    new_node = Node.new(data_1)
+    # new_node = Node.new(data_1) - removed, didn't need
     if @head == nil
       @head = new_node
     else
@@ -99,91 +65,60 @@ class LinkedList
     else
       (index - 1).times do #-1 to get the correct the correct place in the list
         last_node = last_node.next_node #moving through list
-    end
+      end
       new_node.next_node = last_node.next_node
       last_node.next_node = new_node #reassigning pointers
-  end
-
-  def find(index, number) 
-    last_node = @head
-    counter = 0
-    string = ""
-
+    end
+    
+    def find(index, number) 
+      last_node = @head
+      counter = 0
+      string = ""
+      
       while counter < index
         last_node = last_node.next_node
         counter += 1
       end
-
+      
       until counter == (number + index) 
-        string = "#{string} #{last_node.data}" #this line adds space between first data and new data being entered
+        string << last_node.data + " " #this line adds space between first data and new data being entered
         last_node = last_node.next_node
         counter += 1
       end
-      string.strip
+      string.chop
     end
-      # last_node.next_node.data 
+ 
+    def includes?(value)
+      last_node = @head
+      until last_node.data == value
+        last_node = last_node.next_node
+        break if last_node.next_node == nil
+      end
+      if 
+        last_node.next_node == nil
+        false 
+      else
+        true
+      end
+    end
 
-        # (number - 1).times do
-        # end
-        # (number - 1).times do
-        #   last_node.next_node.data
-        #   # (number - 1).times do
-        #   #   last_node = last_node.next_node
-        #   end
-
-      # (number - 1).times do
-      # last_node.next_node.data
-      # end
+    def pop #delets and returns last element
+      last_node = @head
+      previous_node = nil
       
-  # def find(index) # This method worked to find the element at the index number, will update to add second parameter
-  #   last_node = @head
-
-  #   (index - 1).times do
-  #     last_node = last_node.next_node
-  #   end
-  #   last_node.next_node.data 
-  # end  
-
-  def includes?(value)
-    last_node = @head
-    until last_node.data == value
-      last_node = last_node.next_node
-      break if last_node.next_node == nil
-    end
-    if 
-      last_node.next_node == nil
-      false 
-    else
-      true
+      until last_node.next_node == nil
+        previous_node = last_node
+        last_node = last_node.next_node
+      end
+      previous_node.next_node = nil #resets previous node to nil next node
+      last_node.data #returns
     end
   end
-  # current_data = last_node.data
-
-  # if current_data == value
-  #   true
-  # else
-  #   while current_data != value
-  #     last_node = last_node.next_node
-  #   end
-  #   true
   
-  def pop #delets and returns last element
-    last_node = @head
-    previous_node = nil
 
-    until last_node.next_node == nil
-      previous_node = last_node
-      last_node = last_node.next_node
-    end
-    previous_node.next_node = nil #resets previous node to nil next node
-    last_node.data #returns
-  end
-end
-
-
-
-
-
+  
+  
+  
 
 
 
