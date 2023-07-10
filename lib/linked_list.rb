@@ -80,13 +80,12 @@ class LinkedList
     string.strip #takes away all whitespace
   end
 
-  def prepend(data_1)
+  def prepend(data_1) #moving data to the head of the list
     new_node = Node.new(data_1)
-    new_node = @head
     if @head == nil
       @head = new_node
     else
-      current = Node.new(data_1)
+      current = Node.new(data_1) #moving the new node to the current head and setting current head to next_node
       current.next_node = @head
       @head = current
     end

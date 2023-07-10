@@ -61,8 +61,9 @@ describe LinkedList do
   end
   
   describe "#prepend" do
-    xit "will add nodes to the beginning of the list" do
+    it "will add nodes to the beginning of the list" do
       list = LinkedList.new
+
       list.append("plop")
       expect(list.to_string).to eq("plop")
       list.append("suu")
@@ -71,6 +72,10 @@ describe LinkedList do
       expect(list.head.data).to eq("dop")
       expect(list.to_string).to eq("dop plop suu")
       expect(list.count).to eq(3)
+      # list.prepend("doowap") #Extra testing
+      # expect(list.to_string).to eq("doowap dop plop suu")
+      # list.append("hello")
+      # expect(list.to_string).to eq("doowap dop plop suu hello")
     end
   end
 
