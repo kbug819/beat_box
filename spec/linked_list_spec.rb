@@ -135,6 +135,7 @@ describe LinkedList do
       # expect(list.pop).to eq("blop")
       # expect(list.pop).to eq("shu")
       list.pop
+      expect(list.to_string).to eq("deep woo shi shu")
       list.pop
       expect(list.to_string).to eq("deep woo shi")
     end
@@ -147,7 +148,3 @@ end
 
 
 
-#Created a variable regarding the current node that you are on.
-#count += 1
-#Current node = head
-#count until next_node is nil, if not, keep counting

@@ -134,10 +134,7 @@ class LinkedList
       # (number - 1).times do
       # last_node.next_node.data
       # end
-
       
-
-
   # def find(index) # This method worked to find the element at the index number, will update to add second parameter
   #   last_node = @head
 
@@ -180,17 +177,7 @@ class LinkedList
     end
     previous_node.next_node = nil #resets previous node to nil next node
     last_node.data #returns
-
   end
-
-
-
-
-
-  
-
-
-
 end
 
 

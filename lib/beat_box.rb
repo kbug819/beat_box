@@ -26,13 +26,10 @@ def count
 end
 
 def play
- puts `say -r 150 -v Boing #{list.to_string}`
+ puts `say -r 500 -v Boing #{list.to_string}`
+#  puts `say -r 150 -v Boing #{list.to_string}`
 end
 
 
 end
 
-# bb = BeatBox.new
-# bb.append("deep doo ditt")
-# bb.append("woo hoo shu")
-# bb.play
