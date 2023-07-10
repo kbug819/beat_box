@@ -110,7 +110,7 @@ describe LinkedList do
   end
 
   describe "#includes?" do
-    xit "will give boolean if element listed" do
+    it "will give boolean if element listed" do
       list = LinkedList.new
 
       list.append("deep")
@@ -119,13 +119,12 @@ describe LinkedList do
       list.append("shu")
       list.append("blop")
       expect(list.includes?("deep")).to eq(true)
-
       expect(list.includes?("dep")).to eq(false)
     end
   end
 
   describe "#pop" do
-    xit "takes the last element from list" do
+    it "takes the last element from list" do
       list = LinkedList.new
 
       list.append("deep")

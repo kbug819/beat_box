@@ -149,28 +149,28 @@ class LinkedList
 
   def includes?(value)
     last_node = @head
-    # current_data = last_node.data
-
-    # if current_data == value
-    #   true
-    # else
-    #   while current_data != value
-    #     last_node = last_node.next_node
-    #   end
-    #   true
-      until last_node.data == value
-        last_node = last_node.next_node
-        break if last_node.next_node == nil
-      end
-      if 
-        last_node.next_node == nil
-        false 
-      else
-        true
-      end
+    until last_node.data == value
+      last_node = last_node.next_node
+      break if last_node.next_node == nil
+    end
+    if 
+      last_node.next_node == nil
+      false 
+    else
+      true
+    end
   end
+  # current_data = last_node.data
 
-  def pop
+  # if current_data == value
+  #   true
+  # else
+  #   while current_data != value
+  #     last_node = last_node.next_node
+  #   end
+  #   true
+  
+  def pop #delets and returns last element
     last_node = @head
     previous_node = nil
 
@@ -178,8 +178,8 @@ class LinkedList
       previous_node = last_node
       last_node = last_node.next_node
     end
-    previous_node.next_node = nil
-    last_node.data
+    previous_node.next_node = nil #resets previous node to nil next node
+    last_node.data #returns
 
   end
 
