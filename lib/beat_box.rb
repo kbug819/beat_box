@@ -26,7 +26,7 @@ def count
 end
 
 def play
- puts `say -r 200 -v Boing #{list.to_string}`
+ puts `say -r 150 -v Boing #{list.to_string}`
 end
 
 
