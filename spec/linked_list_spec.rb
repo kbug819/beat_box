@@ -80,7 +80,7 @@ describe LinkedList do
   end
 
   describe "#insert" do
-    xit "will submit an element to middle of list" do
+    it "will submit an element to middle of list" do
       list = LinkedList.new
       list.append("plop")
       list.append("suu")

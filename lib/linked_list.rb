@@ -79,7 +79,7 @@ class LinkedList
     string = "#{string} #{last_node.data}"
     string.strip #takes away all whitespace
   end
-
+  
   def prepend(data_1) #moving data to the head of the list
     new_node = Node.new(data_1)
     if @head == nil
@@ -90,11 +90,24 @@ class LinkedList
       @head = current
     end
   end 
+  
+  def insert(index, data_2)
+    new_node = Node.new(data_2)
+    last_node = @head
+    if last_node == nil
+      new_node = @head
+    else
+      (index - 1).times do #-1 to get the correct the correct place in the list
+        last_node = last_node.next_node #moving through list
+    end
+      new_node.next_node = last_node.next_node
+      last_node.next_node = new_node #reassigning pointers
+  end
 
   def find(index, number) 
-      last_node = @head
-      counter = 0
-      string = ""
+    last_node = @head
+    counter = 0
+    string = ""
 
       while counter < index
         last_node = last_node.next_node
@@ -169,18 +182,6 @@ class LinkedList
 
   end
 
-  def insert(index, data_2)
-    new_node = Node.new(data_2)
-    current = @head
-    if current == nil
-      new_node = @head
-    else
-      (index - 1).times do
-        current = current.next_node
-    end
-      new_node.next_node = current.next_node
-      current.next_node = new_node
-  end
 
 
 
