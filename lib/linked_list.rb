@@ -65,18 +65,19 @@ class LinkedList
   
 
   def to_string # Need to do further research on this method to better understand
-   if @head == nil
+   string = ""
+    if @head == nil
     nil
    else
     last_node = @head
       until last_node.next_node == nil do
-        string = "#{string} #{last_node.data}"
+        string = "#{string} #{last_node.data}" #adds each data point to the empty string
         last_node = last_node.next_node
       end
     end
 
     string = "#{string} #{last_node.data}"
-    string.strip
+    string.strip #takes away all whitespace
   end
 
   def prepend(data_1)

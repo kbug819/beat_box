@@ -50,12 +50,11 @@ describe LinkedList do
   end
 
   describe "#to_string" do
-    xit "returns all elements in the list" do
+    it "returns all elements in the list" do
       list = LinkedList.new
 
       list.append("doop")
       expect(list.head.data).to eq("doop")
-
       list.append("deep")
       expect(list.to_string).to eq("doop deep")
     end
