@@ -34,12 +34,11 @@ class LinkedList
     count = 0
     last_node = @head
 
-    while last_node
+    while last_node != nil #continues until last_node is not nil
       count += 1
       last_node = last_node.next_node
     end
-
-    count
+    count #prints the count
   end
     #  if head.data == nil
     #   @count_node = 0
@@ -51,8 +50,6 @@ class LinkedList
     #       @count_node += 1
     #     end
     #  end
-
-    
     # else
     #   count += 1 while head.next_node == nil
     # end

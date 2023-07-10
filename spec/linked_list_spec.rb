@@ -38,7 +38,7 @@ describe LinkedList do
   
 
   describe "#count#" do
-    xit "counts the amount of data listed" do
+    it "counts the amount of data listed" do
       list = LinkedList.new
 
       expect(list.count).to eq(0)  
