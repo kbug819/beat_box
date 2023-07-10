@@ -93,7 +93,7 @@ describe LinkedList do
   end
 
   describe "#find" do
-    xit "will find the parameters in the list" do
+    it "will find the parameters in the list" do
       list = LinkedList.new
 
       list.append("deep")
@@ -105,6 +105,7 @@ describe LinkedList do
       # expect(list.find(2)).to eq("shi") #(used test to find the first parameter, will now tackle finding the second parameter for the method)
       expect(list.find(2, 1)).to eq("shi")
       expect(list.find(1, 3)).to eq("woo shi shu")
+      # expect(list.find(3, 2)).to eq("shu blop") #test line
     end
   end
 

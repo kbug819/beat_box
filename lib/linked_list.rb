@@ -115,11 +115,12 @@ class LinkedList
       end
 
       until counter == (number + index) 
-        string << last_node.data  #Cannot figure out how to add a space
+        string = "#{string} #{last_node.data}" #this line adds space between first data and new data being entered
         last_node = last_node.next_node
         counter += 1
       end
-      string
+      string.strip
+    end
       # last_node.next_node.data 
 
         # (number - 1).times do
@@ -134,7 +135,7 @@ class LinkedList
       # last_node.next_node.data
       # end
 
-    end  
+      
 
 
   # def find(index) # This method worked to find the element at the index number, will update to add second parameter
