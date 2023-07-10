@@ -23,7 +23,17 @@ describe BeatBox do
       expect(bb.list.head.next_node.data).to eq("doo")
       bb.append("woo hoo shu")
       expect(bb.count).to eq(6)
+    end
+  end
+
+  describe "play" do
+    it "plays the input from the terminal" do
+      bb = BeatBox.new
+      bb.append("deep doo ditt woo hoo shu")
       bb.play
     end
   end
+
+
+
 end
