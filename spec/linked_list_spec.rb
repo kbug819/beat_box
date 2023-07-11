@@ -31,9 +31,7 @@ describe LinkedList do
       list.append("deep")
       expect(list.head).to be_an_instance_of(Node)
       expect(list.head.next_node.data).to eq("deep")
-      #this portion was very difficult, but a huge step forward after figuring it out!# 
-      #Understanding the circular structure of going from head to next node, re-assigning value, next-node, etc. 
-    end
+      end
   end
   
 
@@ -82,10 +80,10 @@ describe LinkedList do
   describe "#insert" do
     it "will submit an element to middle of list" do
       list = LinkedList.new
+
       list.append("plop")
       list.append("suu")
       list.prepend("dop")
-
       expect(list.to_string).to eq("dop plop suu")
       list.insert(1, "woo")
       expect(list.to_string).to eq("dop woo plop suu")
@@ -138,8 +136,6 @@ describe LinkedList do
       expect(list.to_string).to eq("deep woo shi")
     end
   end
-
-
 end
 
 

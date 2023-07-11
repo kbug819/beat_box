@@ -6,7 +6,6 @@ class LinkedList
 
   def append(data)
     new_node = Node.new(data)
-    # current = @head - redifined below, better understanding of 'last_node'
 
     if @head == nil
       @head = new_node
@@ -15,7 +14,6 @@ class LinkedList
       while last_node.next_node != nil
         last_node = last_node.next_node
       end
-      # will do the while function until we are at the end of the list
       last_node.next_node = new_node
     end
   end
@@ -24,11 +22,11 @@ class LinkedList
     count = 0
     last_node = @head
 
-    while last_node != nil #continues until last_node is not nil
+    while last_node != nil 
       count += 1
       last_node = last_node.next_node
     end
-    count #prints the count
+    count 
   end
   
     def to_string 
@@ -46,14 +44,14 @@ class LinkedList
        string.chop 
      end
   
-  def prepend(data_1) #moving data to the head of the list
-    # new_node = Node.new(data_1) - removed, didn't need
+  def prepend(data_1) 
+    
     if @head == nil
       @head = new_node
     else
-      current = Node.new(data_1) #moving the new node to the current head 
-      current.next_node = @head #setting current head to next_node
-      @head = current #setting new node to the head position
+      current = Node.new(data_1) 
+      current.next_node = @head 
+      @head = current 
     end
   end 
   
@@ -63,11 +61,11 @@ class LinkedList
     if last_node == nil
       new_node = @head
     else
-      (index - 1).times do #-1 to get the correct the correct place in the list
-        last_node = last_node.next_node #moving through list
+      (index - 1).times do 
+        last_node = last_node.next_node 
       end
-      new_node.next_node = last_node.next_node #reassigning last node to next node of new
-      last_node.next_node = new_node #reassigning pointers
+      new_node.next_node = last_node.next_node 
+      last_node.next_node = new_node 
     end
     
     def find(index, number) 
@@ -77,15 +75,15 @@ class LinkedList
       
       while counter < index
         last_node = last_node.next_node
-        counter += 1 #moves through the list until reaches index number
+        counter += 1 
       end
       
-      until counter == (number + index) #moves from index + number of spaces
-        string << last_node.data + " " #this line adds space between first data and new data being entered
-        last_node = last_node.next_node #moving through the list
-        counter += 1 #reaches total between the two numbers
+      until counter == (number + index) 
+        string << last_node.data + " " 
+        last_node = last_node.next_node 
+        counter += 1 
       end
-      string.chop #prints string without space at the end
+      string.chop 
     end
  
     def includes?(value)
@@ -102,15 +100,15 @@ class LinkedList
       end
     end
 
-    def pop #delets and returns last element
+    def pop 
       last_node = @head
-      previous_node = nil #addition of previous node to mark the space before
+      previous_node = nil 
       
       until last_node.next_node == nil
         previous_node = last_node
         last_node = last_node.next_node
       end
-      previous_node.next_node = nil #resets previous node to nil next node
+      previous_node.next_node = nil 
     end
   end
   

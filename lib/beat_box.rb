@@ -7,18 +7,12 @@ class BeatBox
     @list = list = LinkedList.new
   end
 
-
 def append(data)
   new_data = data.split
   
   new_data.each do |nd|
     list.append(nd)
   end
-
-  # list.append(new_data[0])
-  # list.append(new_data[1])
-  # list.append(new_data[2])
-
 end
 
 def count
