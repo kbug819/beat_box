@@ -26,13 +26,13 @@ def count
 end
 
 def play
- puts `say -r 500 -v Boing #{list.to_string}`
-#  puts `say -r 150 -v Boing #{list.to_string}`
+ puts `say -r 150 -v Boing #{list.to_string}`
 end
 
 # def all
-#   string = ""
+#   # string = ""
 #   new_data = list.to_string.split
+#   # require 'pry';binding.pry
 #   new_data.each do |nd|
 #     if nd == "deep" || "do" || "sleep"
 #     end
@@ -40,25 +40,4 @@ end
 #   new_data.to_s.delete! "^A-Za-z"
 # end
 end
-
-# def all
-#   string = ""
-#   if @head == nil
-#     nil
-#   else
-#     last_node = @head
-#     until last_node.next_node == nil do
-#       last_node = last_node.next_node
-#       string = "#{string} #{last_node.data}" 
-#     end
-#       if last_node.data == "deep" || "do" || "sleep"
-#         string = "#{string} #{last_node.data}"
-#         string.strip #takes away all whitespace
-#     end
-#    end
-#   end
-# end
-   
-
-
 

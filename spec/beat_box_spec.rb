@@ -43,6 +43,7 @@ describe BeatBox do
       expect(bb.all).to eq("deep do")
       bb.append("mississipi")
       expect(bb.all).to eq("deep do")
+      
     end
   end
 
