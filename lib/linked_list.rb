@@ -2,7 +2,7 @@ class LinkedList
   attr_reader :head
   def initialize
     @head = nil
- end
+  end
 
   def append(data)
     new_node = Node.new(data)
@@ -29,23 +29,22 @@ class LinkedList
     count 
   end
   
-    def to_string 
-      string = ""
-       if @head == nil
-       nil
-      else
-       last_node = @head
-         until last_node.next_node == nil do
-          string << last_node.data + " "
-          last_node = last_node.next_node
-         end
-       end
-       string << last_node.data + " "
-       string.chop 
-     end
+  def to_string 
+    string = ""
+      if @head == nil
+      nil
+    else
+      last_node = @head
+      until last_node.next_node == nil do
+        string << last_node.data + " "
+        last_node = last_node.next_node
+      end
+    end
+    string << last_node.data + " "
+    string.chop 
+  end
   
   def prepend(data_1) 
-    
     if @head == nil
       @head = new_node
     else
@@ -67,56 +66,46 @@ class LinkedList
       new_node.next_node = last_node.next_node 
       last_node.next_node = new_node 
     end
+  end
     
-    def find(index, number) 
-      last_node = @head
-      counter = 0
-      string = ""
-      
-      while counter < index
-        last_node = last_node.next_node
-        counter += 1 
-      end
-      
-      until counter == (number + index) 
-        string << last_node.data + " " 
-        last_node = last_node.next_node 
-        counter += 1 
-      end
-      string.chop 
+  def find(index, number) 
+    last_node = @head
+    counter = 0
+    string = ""
+    while counter < index
+      last_node = last_node.next_node
+      counter += 1 
     end
+    until counter == (number + index) 
+      string << last_node.data + " " 
+      last_node = last_node.next_node 
+      counter += 1 
+    end
+    string.chop 
+  end
  
-    def includes?(value)
-      last_node = @head
-      until last_node.data == value
-        last_node = last_node.next_node
-        break if last_node.next_node == nil
-      end
-      if 
-        last_node.next_node == nil
-        false 
-      else
-        true
-      end
+  def includes?(value)
+    last_node = @head
+    until last_node.data == value
+      last_node = last_node.next_node
+      break if last_node.next_node == nil
     end
-
-    def pop 
-      last_node = @head
-      previous_node = nil 
-      
-      until last_node.next_node == nil
-        previous_node = last_node
-        last_node = last_node.next_node
-      end
-      previous_node.next_node = nil 
+    if 
+      last_node.next_node == nil
+      false 
+    else
+      true
     end
   end
-  
 
-  
-  
-  
-
-
-
+  def pop 
+    last_node = @head
+    previous_node = nil 
+    until last_node.next_node == nil
+      previous_node = last_node
+      last_node = last_node.next_node
+    end
+    previous_node.next_node = nil 
+  end
 end
+
